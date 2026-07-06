@@ -1,0 +1,34 @@
+[
+  {
+    "id": "carrot",
+    "name": "Carrot",
+    "emoji": "🥕",
+    "seedPrice": 8,
+    "growTimeSeconds": 8,
+    "sellValue": 16
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "emoji": "🍓",
+    "seedPrice": 14,
+    "growTimeSeconds": 14,
+    "sellValue": 32
+  },
+  {
+    "id": "sunflower",
+    "name": "Sunflower",
+    "emoji": "🌻",
+    "seedPrice": 22,
+    "growTimeSeconds": 22,
+    "sellValue": 55
+  },
+  {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "emoji": "🎃",
+    "seedPrice": 35,
+    "growTimeSeconds": 34,
+    "sellValue": 95
+  }
+]

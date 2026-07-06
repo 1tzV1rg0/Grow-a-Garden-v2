@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow a Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Grow a Garden</h1>
+      <p>Plant seeds, grow crops, harvest, sell, and expand your tiny patch of green.</p>
+    </div>
+    <div class="wallet" aria-live="polite">
+      <span>Coins</span>
+      <strong id="coins">0</strong>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="panel garden-panel">
+      <div class="section-title">
+        <h2>Garden</h2>
+        <button id="clearSaveBtn" class="ghost-button" type="button">New Game</button>
+      </div>
+      <div id="gardenGrid" class="garden-grid" aria-label="Garden grid"></div>
+      <p id="statusText" class="status-text">Loading garden...</p>
+    </section>
+
+    <aside class="side-column">
+      <section class="panel">
+        <div class="section-title">
+          <h2>Shop</h2>
+          <span class="small-note">Buy seeds</span>
+        </div>
+        <div id="shopList" class="item-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Seeds</h2>
+          <span class="small-note">Tap a seed, then a plot</span>
+        </div>
+        <div id="seedInventory" class="item-list compact"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Harvest</h2>
+          <button id="sellAllBtn" type="button">Sell All</button>
+        </div>
+        <div id="cropInventory" class="item-list compact"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="../src/gameRules.js"></script>
+  <script src="../src/plantRules.js"></script>
+  <script src="../src/shopRules.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

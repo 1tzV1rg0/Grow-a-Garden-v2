@@ -1,0 +1,284 @@
+:root {
+  --sky: #dff7ff;
+  --leaf: #2f8f46;
+  --leaf-dark: #1e6b35;
+  --soil: #8b5a2b;
+  --soil-dark: #60401f;
+  --sun: #ffd166;
+  --cream: #fff9e8;
+  --mint: #d9f7cf;
+  --berry: #c84b71;
+  --ink: #26332b;
+  --muted: #607064;
+  --panel: rgba(255, 255, 255, 0.88);
+  --shadow: 0 16px 36px rgba(45, 86, 56, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 209, 102, 0.38), transparent 24rem),
+    linear-gradient(180deg, var(--sky) 0%, #eefbdc 48%, #ccefb6 100%);
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: var(--leaf);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.7rem 0.9rem;
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+}
+
+button:hover {
+  background: var(--leaf-dark);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--leaf-dark);
+}
+
+.topbar p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.wallet {
+  min-width: 130px;
+  padding: 0.9rem 1rem;
+  border: 2px solid rgba(47, 143, 70, 0.2);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.wallet span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.wallet strong {
+  display: block;
+  color: #a66a00;
+  font-size: 2rem;
+}
+
+.game-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 1rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.side-column {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.panel {
+  border: 2px solid rgba(47, 143, 70, 0.16);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: var(--leaf-dark);
+  font-size: 1.25rem;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ghost-button {
+  color: var(--leaf-dark);
+  background: #e8f7df;
+}
+
+.ghost-button:hover {
+  background: #d5efc8;
+}
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(84px, 1fr));
+  gap: 0.75rem;
+}
+
+.plot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 112px;
+  border: 3px solid var(--soil-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25% 50%, rgba(255, 255, 255, 0.08) 50% 75%, transparent 75%),
+    var(--soil);
+  background-size: 20px 20px;
+  text-align: center;
+}
+
+.plot.ready {
+  border-color: var(--sun);
+  box-shadow: 0 0 0 4px rgba(255, 209, 102, 0.35);
+}
+
+.plant-emoji {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.plot-name {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 700;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--sun);
+}
+
+.status-text {
+  min-height: 1.4rem;
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+}
+
+.item-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.shop-item,
+.inventory-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(38, 51, 43, 0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+.compact .inventory-item {
+  grid-template-columns: 1fr auto;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.2rem;
+  font-weight: 700;
+}
+
+.item-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.seed-choice {
+  color: var(--ink);
+  background: var(--mint);
+}
+
+.seed-choice.selected {
+  color: white;
+  background: var(--berry);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .game-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .game-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .garden-grid {
+    grid-template-columns: repeat(3, minmax(78px, 1fr));
+  }
+
+  .plot {
+    min-height: 96px;
+  }
+}

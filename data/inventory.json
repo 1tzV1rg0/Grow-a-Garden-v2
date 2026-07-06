@@ -1,0 +1,14 @@
+{
+  "seeds": {
+    "carrot": 3,
+    "strawberry": 1,
+    "sunflower": 0,
+    "pumpkin": 0
+  },
+  "crops": {
+    "carrot": 0,
+    "strawberry": 0,
+    "sunflower": 0,
+    "pumpkin": 0
+  }
+}
