@@ -54,3 +54,5 @@ Example:
 Starter data comes from the JSON files. After the first load, progress is saved in the browser using `localStorage`, including coins, inventory, and planted garden plots.
 
 Use the `New Game` button in the browser to clear the saved progress and reload the starter data.
+
+<!-- Trigger GitHub Pages redeploy -->
